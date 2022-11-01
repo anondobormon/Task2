@@ -1,20 +1,7 @@
-.create_product {
-  form {
-    padding-top: 100px;
-    max-width: 500px;
-    margin: 0 auto;
-
-    fieldset {
-      padding: 50px;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-
-      input,
-      textarea {
-        padding: 10px;
-        outline: none;
-      }
-    }
+.product-details {
+  h3 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
   }
 }

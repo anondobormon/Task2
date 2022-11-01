@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { getAProduct } from "../../actions/productAction";
+import "./ProductDetails.scss";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -14,8 +15,8 @@ export default function ProductDetails() {
   }, [id, dispatch]);
 
   return (
-    <div>
-      ProductDetails
+    <div className="product-details">
+      <h2> ProductDetails</h2>
       {loading ? (
         "loading..."
       ) : (
@@ -27,7 +28,9 @@ export default function ProductDetails() {
               <br />
               <p>Description: {product.description}</p>
               <br />
-              <Link to={`/update/${product._id}`}>Edit</Link>
+              <Link className="button link" to={`/update/${product._id}`}>
+                Edit
+              </Link>
             </div>
           ) : (
             "No product found!"

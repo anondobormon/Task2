@@ -8,6 +8,7 @@ import {
   UPDATE_USER_RESET,
 } from "../constants/userConstants";
 import ToolTip from "./ToolTip";
+import "./UserList.scss";
 
 export default function UserList() {
   const dispatch = useDispatch();
@@ -58,7 +59,7 @@ export default function UserList() {
     {
       field: "name",
       headerName: "Name",
-      minWidth: 300,
+      minWidth: 100,
       flex: 0.6,
 
       renderCell: (params) => {
@@ -72,14 +73,14 @@ export default function UserList() {
     {
       field: "email",
       headerName: "Email",
-      minWidth: 350,
-      flex: 0.1,
+      minWidth: 150,
+      flex: 0.5,
     },
     {
       field: "role",
       headerName: "Role",
-      minWidth: 150,
-      flex: 0.1,
+      minWidth: 50,
+      flex: 0.3,
       renderCell: (params) => {
         return (
           <div className="actions">
@@ -137,7 +138,7 @@ export default function UserList() {
   };
 
   return (
-    <div>
+    <div className="userlist">
       <h2>All Users</h2>
       <DataGrid
         rows={rows}

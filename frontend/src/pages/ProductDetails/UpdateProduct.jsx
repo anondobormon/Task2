@@ -7,7 +7,6 @@ import {
   updateProduct,
 } from "../../actions/productAction";
 import { PRODUCT_UPDATE_RESET } from "../../constants/productConstants";
-import "./UpdateProduct.scss";
 
 export default function UpdateProduct() {
   const { id } = useParams();
@@ -53,7 +52,7 @@ export default function UpdateProduct() {
 
   return (
     <div>
-      UpdateProduct
+      <h2>UpdateProduct</h2>
       {loading ? (
         "Loading..."
       ) : (
@@ -80,7 +79,8 @@ export default function UpdateProduct() {
                 disabled={updateProductLoading}
                 onClick={handleSubmit}
                 type="submit"
-                value="Create"
+                value={loading ? "Loading..." : "Update"}
+                className="button"
               />
             </fieldset>
           </form>

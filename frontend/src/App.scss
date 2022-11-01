@@ -11,6 +11,104 @@
 
   .workspace {
     width: calc(100% - 300px);
-    padding: 20px 0 20px 20px;
+    padding-top: 30px;
+    padding-left: 30px;
   }
+}
+
+.button {
+  cursor: pointer;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+.link {
+  padding: 10px 50px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid rgb(209, 209, 209);
+
+  &:hover {
+    color: purple;
+    border: 1px solid purple;
+  }
+}
+
+form {
+  padding-top: 100px;
+  max-width: 500px;
+  margin: 0 auto;
+
+  fieldset {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    input,
+    textarea {
+      padding: 10px;
+      outline: none;
+    }
+  }
+}
+
+.user_details {
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 10px;
+
+    span {
+      font-weight: 600;
+      margin-left: 10px;
+    }
+  }
+  .role {
+    color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 8px 15px;
+    max-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      text-transform: capitalize;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+  }
+}
+.error {
+  color: red;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+.success {
+  color: rgb(0, 107, 16);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+.login,
+.register {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.home {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
 }

@@ -8,6 +8,7 @@ import {
   getAllProducts,
 } from "../../actions/productAction";
 import { PRODUCT_DELETE_RESET } from "../../constants/productConstants";
+import "./ProductList.scss";
 
 export default function ProductList() {
   const dispatch = useDispatch();
@@ -86,7 +87,7 @@ export default function ProductList() {
     dispatch(deleteProduct(id));
   };
   return (
-    <div>
+    <div className="productlist">
       ProductList
       <DataGrid
         rows={rows}

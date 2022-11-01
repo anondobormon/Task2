@@ -9,10 +9,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid purple;
   }
 
   .side_menu {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     ul {
       list-style: none;
 
@@ -30,6 +35,27 @@
             background: rgb(63, 63, 140, 0.2);
           }
         }
+      }
+    }
+    .activeLink {
+      color: rgb(63, 63, 140);
+      background: rgb(63, 63, 140, 0.2);
+    }
+
+    .logout {
+      width: fit-content;
+      margin: 0 auto;
+      padding: 10px 30px;
+      border: none;
+      background: rgb(63, 63, 140, 0.2);
+      border-radius: 5px;
+      font-weight: 700;
+      cursor: pointer;
+      color: rgb(63, 63, 140);
+
+      &:active {
+        background: rgb(63, 63, 140, 0.6);
+        color: purple;
       }
     }
   }

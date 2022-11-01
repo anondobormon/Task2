@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../../actions/userAction";
 import "./Sidebar.scss";
 
@@ -15,31 +15,56 @@ export default function Sidebar() {
     navigate("/login");
   };
 
+  const activeStyle = {
+    color: "purple",
+    background: "rgb(63, 63, 140, 0.2)",
+  };
   return (
     <div className="sidebar">
       <div className="logo">
-        <h2>LOGO</h2>
+        <h2>
+          <Link to="/">Dashboard</Link>
+        </h2>
       </div>
 
       <div className="side_menu">
         <ul>
           <li>
-            <Link to="/">Dashboard</Link>{" "}
+            <NavLink
+              className={({ isActive }) => isActive && "activeLink"}
+              to="/users"
+            >
+              Users
+            </NavLink>{" "}
           </li>
           <li>
-            <Link to="/users">Users</Link>{" "}
+            <NavLink
+              className={({ isActive }) => isActive && "activeLink"}
+              to="/product-list"
+            >
+              Products
+            </NavLink>{" "}
           </li>
           <li>
-            <Link to="/product-list">Products</Link>{" "}
+            <NavLink
+              className={({ isActive }) => isActive && "activeLink"}
+              to="/create-product"
+            >
+              Create Product
+            </NavLink>{" "}
           </li>
           <li>
-            <Link to="/create-product">Create Product</Link>{" "}
+            <NavLink
+              className={({ isActive }) => isActive && "activeLink"}
+              to="/create-user"
+            >
+              Create User
+            </NavLink>{" "}
           </li>
-          <li>
-            <Link to="/create-user">Create User</Link>{" "}
-          </li>
-          <li onClick={handleLogout}>Logout</li>
         </ul>
+        <button className="logout" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
     </div>
   );

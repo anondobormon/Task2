@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createUser } from "../../actions/userAction";
-import "../Register/Register.scss";
 
 export default function CreateUser() {
   const [user, setUser] = useState({
@@ -28,37 +27,40 @@ export default function CreateUser() {
   return (
     <div className="register">
       <form action="">
-        <h2>Create User here!</h2>
+        <h2></h2>
+        <fieldset>
+          <legend>Create User here!</legend>
+          <input
+            onChange={handleDataChange}
+            type="text"
+            placeholder="Enter user name"
+            name="name"
+          />
+          <input
+            onChange={handleDataChange}
+            type="email"
+            name="email"
+            placeholder="Enter user email"
+            id=""
+          />
+          <input
+            onChange={handleDataChange}
+            type="password"
+            name="password"
+            placeholder="Enter user password"
+            id=""
+          />
 
-        <input
-          onChange={handleDataChange}
-          type="text"
-          placeholder="Enter user name"
-          name="name"
-        />
-        <input
-          onChange={handleDataChange}
-          type="email"
-          name="email"
-          placeholder="Enter user email"
-          id=""
-        />
-        <input
-          onChange={handleDataChange}
-          type="password"
-          name="password"
-          placeholder="Enter user password"
-          id=""
-        />
+          {error && <p className="error">{error}</p>}
+          {success && <p className="success">Create User Successfully</p>}
 
-        {error && <p className="error">{error}</p>}
-        {success && <p className="success">Create User Successfully</p>}
-
-        <input
-          onClick={handleSubmit}
-          type="submit"
-          value={` ${loading ? "Loading..." : "Create User"}`}
-        />
+          <input
+            onClick={handleSubmit}
+            type="submit"
+            className="button"
+            value={` ${loading ? "Loading..." : "Create User"}`}
+          />
+        </fieldset>
       </form>
     </div>
   );

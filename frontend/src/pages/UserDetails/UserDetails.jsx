@@ -18,7 +18,7 @@ export default function UserDetails() {
   }, [id, error, dispatch]);
 
   return (
-    <div>
+    <div className="user_details">
       <h2>User Details</h2>
       {loading ? (
         "Loading..."
@@ -26,10 +26,18 @@ export default function UserDetails() {
         <div>
           {user ? (
             <div>
-              <p>Name: {user.name}</p>
-              <p>Email: {user.email}</p>
-              <p>ID: {user._id}</p>
-              <p>Role: {user.role}</p>
+              <p className="name">
+                Name: <span> {user.name} </span>{" "}
+              </p>
+              <p className="email">
+                Email: <span> {user.email}</span>{" "}
+              </p>
+              <p className="id">
+                ID: <span> {user._id} </span>{" "}
+              </p>
+              <p className="role">
+                Role: <span>{user.role}</span>{" "}
+              </p>
             </div>
           ) : (
             "Not found!"

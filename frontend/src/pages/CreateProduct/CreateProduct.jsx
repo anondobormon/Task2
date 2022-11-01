@@ -58,13 +58,15 @@ export default function CreateProduct() {
             id=""
             cols="30"
             rows="10"
+            placeholder="Description"
             value={data.description}
           ></textarea>
           <input
             disabled={loading}
             onClick={handleSubmit}
             type="submit"
-            value="Create"
+            value={loading ? "Loading..." : "Create"}
+            className="button"
           />
         </fieldset>
       </form>
