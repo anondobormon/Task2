@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { loadUser } from "./actions/userAction";
 import "./App.scss";
+import Navbar from "./components/Navbar/Navbar";
 import PrivetRoute from "./components/PrivetRoute/PrivetRoute";
 import Sidebar from "./components/Sidebar/Sidebar";
 import CreateProduct from "./pages/CreateProduct/CreateProduct";
@@ -27,6 +28,7 @@ function App() {
         <Sidebar />
 
         <div className="workspace">
+          <Navbar />
           <Routes>
             {/* Dashboard */}
             <Route path="/" element={<Home />} />

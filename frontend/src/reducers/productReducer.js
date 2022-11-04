@@ -40,7 +40,7 @@ export const createProductReducer = (state = { product: {} }, action) => {
       return {
         loading: false,
         success: false,
-        ...state,
+        error: action.payload,
       };
     case CREATE_PRODUCT_RESET:
       return {
@@ -51,6 +51,8 @@ export const createProductReducer = (state = { product: {} }, action) => {
     case CLEAR_ERROR:
       return {
         ...state,
+        loading: false,
+        success: false,
         error: null,
       };
 

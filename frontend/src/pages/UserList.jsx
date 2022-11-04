@@ -36,7 +36,7 @@ export default function UserList() {
     }
 
     if (updateUserSuccess) {
-      alert("Role changes to ADMIN");
+      alert("Role changed successfully");
       dispatch({ type: UPDATE_USER_RESET });
     }
 

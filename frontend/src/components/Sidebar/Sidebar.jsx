@@ -22,9 +22,7 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <div className="logo">
-        <h2>
-          <Link to="/">Dashboard</Link>
-        </h2>
+        <Link to="/">Dashboard</Link>
       </div>
 
       <div className="side_menu">

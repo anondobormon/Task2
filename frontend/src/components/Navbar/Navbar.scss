@@ -1,0 +1,40 @@
+.navbar {
+  width: 100%;
+  border-bottom: 1px solid purple;
+  margin-bottom: 30px;
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 50px;
+
+  .content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border: 2px solid purple;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .role {
+      .name {
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: capitalize;
+      }
+      .role {
+        font-size: 15px;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

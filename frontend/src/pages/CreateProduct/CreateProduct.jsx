@@ -22,6 +22,7 @@ export default function CreateProduct() {
     }
     if (error) {
       alert(error);
+      setData({ title: "", description: "" });
       dispatch(clearError());
     }
   }, [success, error, dispatch]);

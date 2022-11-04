@@ -4,12 +4,14 @@ import MenuItem from "@mui/material/MenuItem";
 import Tooltip from "@mui/material/Tooltip";
 import * as React from "react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateUserRole } from "../actions/userAction";
 
 export default function ToolTip({ params }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const dispatch = useDispatch();
+
+  const { user } = useSelector((state) => state.user);
 
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -38,7 +40,7 @@ export default function ToolTip({ params }) {
         </Tooltip>
       </Box>
 
-      {params.getValue(params.id, "role") !== "admin" && (
+      {params.getValue(params.id, "role") !== "admin" && user.role === "admin" && (
         <Menu
           anchorEl={anchorEl}
           id="account-menu"
@@ -74,18 +76,34 @@ export default function ToolTip({ params }) {
           transformOrigin={{ horizontal: "center", vertical: "top" }}
           anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
         >
-          <MenuItem
-            onClick={function (e) {
-              e.preventDefault();
-              dispatch(
-                updateUserRole(params.getValue(params.id, "id"), {
-                  role: "admin",
-                })
-              );
-            }}
-          >
-            Change to Admin
-          </MenuItem>
+          {params.getValue(params.id, "role") === "user" && (
+            <MenuItem
+              onClick={function (e) {
+                e.preventDefault();
+                dispatch(
+                  updateUserRole(params.getValue(params.id, "id"), {
+                    role: "editor",
+                  })
+                );
+              }}
+            >
+              Change to Editor
+            </MenuItem>
+          )}
+          {params.getValue(params.id, "role") === "editor" && (
+            <MenuItem
+              onClick={function (e) {
+                e.preventDefault();
+                dispatch(
+                  updateUserRole(params.getValue(params.id, "id"), {
+                    role: "user",
+                  })
+                );
+              }}
+            >
+              Change to User
+            </MenuItem>
+          )}
         </Menu>
       )}
     </>

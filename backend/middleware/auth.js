@@ -19,9 +19,9 @@ exports.isAuthenticatedUser = asyncAwait(async (req, res, next) => {
 });
 
 //Checking editor or admin
-exports.authorizedRole = (role) => {
+exports.authorizedRole = (role1, role2) => {
   return (req, res, next) => {
-    if (role !== req.user.role) {
+    if (role1 !== req.user.role && role2 !== req.user.role) {
       return next(
         new ErrorHandler(`Role: ${req.user.role} is not allowed to access`, 403)
       );
